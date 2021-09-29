@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoinCoin</title>
+</head>
+<body>
+    <h1>Porte-Monnaie</h1>
+    <h2>Solde : <%= wallet %></h2>
+    <form action="/ajouter">
+    <input type="submit" class="btn btn-primary" value='Ajouter'></input>
+    </form>
+    <form action="/retirer">
+    <input type="submit" class="btn btn-primary" value='Retirer'></input>
+    </form>
+    <form action="/alltransactions">
+        <input type="submit" class="btn btn-primary" value='Historique des transactions'></input>
+        </form>
+
+
+        <ul>
+            <% histo.forEach(function(item) {%>
+                <li><%= item.type %> de <%= item.montant %> euros, le <%= item.date %></li>
+            <%});%>
+        </ul>
+</body>
+</html>
